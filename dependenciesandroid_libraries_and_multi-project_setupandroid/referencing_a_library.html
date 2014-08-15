@@ -1,0 +1,1198 @@
+<!DOCTYPE HTML>
+<html lang="en-US" manifest="../manifest.appcache">
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>Referencing a Library（引用一个库项目） | Gradle Android插件用户指南翻译</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 0.7.0">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    
+    <link rel="next" href="../dependenciesandroid_libraries_and_multi-project_setupandroid/library_publication.html" />
+    
+    
+    <link rel="prev" href="../dependenciesandroid_libraries_and_multi-project_setupandroid/differences_between_a_project_and_a_library_project.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book"  data-level="4.3.3" data-basepath=".." data-revision="1408106496888">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    
+    <a href="https://github.com/null" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="btn-group btn-block">
+        <button id="reduce-font-size" class="btn btn-default">A</button>
+        <button id="enlarge-font-size" class="btn btn-default">A</button>
+    </div>
+
+    <ul class="list-group font-family-list">
+        <li class="list-group-item" data-font="0">Serif</li>
+        <li class="list-group-item" data-font="1">Sans</li>
+    </ul>
+
+    <div class="btn-group btn-group-xs btn-block color-theme-list">
+        <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </span>
+
+    <!-- Actions Right -->
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../" >Gradle Android插件用户指南翻译</a>
+    </h1>
+</div>
+
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+
+        
+
+        
+
+	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         译者序
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="introduction/README.html">
+            
+                
+                    <a href="../introduction/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         Introduction（简介）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="introduction/goals_of_the_new_build_systemgradle.html">
+            
+                
+                    <a href="../introduction/goals_of_the_new_build_systemgradle.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         Goals of the new Build System（gradle构建系统的目标）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="introduction/why_gradlegradle.html">
+            
+                
+                    <a href="../introduction/why_gradlegradle.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         Why Gradle？（为什么使用gradle）
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="requirements/README.html">
+            
+                
+                    <a href="../requirements/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         Requirements（要求）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="basic_project/README.html">
+            
+                
+                    <a href="../basic_project/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         Basic Project（基本项目）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="basic_project/simple_build_files.html">
+            
+                
+                    <a href="../basic_project/simple_build_files.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         Simple build files（简单的构建文件）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="basic_project/project_structure.html">
+            
+                
+                    <a href="../basic_project/project_structure.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         Project Structure（项目结构）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.2.1" data-path="basic_project/configuring_the_structure.html">
+            
+                
+                    <a href="../basic_project/configuring_the_structure.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.1.</b>
+                        
+                         Configuring the Structure
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3" data-path="basic_project/build_tasks.html">
+            
+                
+                    <a href="../basic_project/build_tasks.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                         Build Tasks（构建任务）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.3.1" data-path="basic_project/general_tasks.html">
+            
+                
+                    <a href="../basic_project/general_tasks.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.1.</b>
+                        
+                         General Tasks（通用任务）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3.2" data-path="basic_project/java_project_tasksjavatask.html">
+            
+                
+                    <a href="../basic_project/java_project_tasksjavatask.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.2.</b>
+                        
+                         Java project tasks（Java项目的Task）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3.3" data-path="basic_project/android_tasks.html">
+            
+                
+                    <a href="../basic_project/android_tasks.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.3.</b>
+                        
+                         Android tasks
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4" data-path="basic_project/basic_build_customization.html">
+            
+                
+                    <a href="../basic_project/basic_build_customization.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                         Basic Build Customization（基本的构建定制）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.4.1" data-path="basic_project/manifest_entries_manifest.html">
+            
+                
+                    <a href="../basic_project/manifest_entries_manifest.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.1.</b>
+                        
+                         Manifest entries （Manifest属性）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4.2" data-path="basic_project/build_types.html">
+            
+                
+                    <a href="../basic_project/build_types.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.2.</b>
+                        
+                         Build Types（构建类型）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4.3" data-path="basic_project/signing_configurations.html">
+            
+                
+                    <a href="../basic_project/signing_configurations.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.3.</b>
+                        
+                         signing configurations（签名配置）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4.4" data-path="basic_project/running_proguard_proguard.html">
+            
+                
+                    <a href="../basic_project/running_proguard_proguard.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.4.</b>
+                        
+                         Running Proguard（运行 Proguard）
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="dependenciesandroid_libraries_and_multi-project_setupandroid/README.html">
+            
+                
+                    <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         Dependencies，Android Libraries and Multi-project setup（依赖关系，Android库和多项目设置）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="dependenciesandroid_libraries_and_multi-project_setupandroid/dependencies_on_binary_packages.html">
+            
+                
+                    <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/dependencies_on_binary_packages.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         Dependencies on binary packages（依赖二进制包）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1.1" data-path="dependenciesandroid_libraries_and_multi-project_setupandroid/local_packages.html">
+            
+                
+                    <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/local_packages.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.1.</b>
+                        
+                         Local packages（本地包）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.1.2" data-path="dependenciesandroid_libraries_and_multi-project_setupandroid/remote_artifacts.html">
+            
+                
+                    <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/remote_artifacts.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.2.</b>
+                        
+                         Remote artifacts（远程文件）
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.2" data-path="dependenciesandroid_libraries_and_multi-project_setupandroid/multi_project_setup.html">
+            
+                
+                    <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/multi_project_setup.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                         Multi project setup（多项目设置）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3" data-path="dependenciesandroid_libraries_and_multi-project_setupandroid/library_projects.html">
+            
+                
+                    <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/library_projects.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                         Library projects（库项目）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.3.1" data-path="dependenciesandroid_libraries_and_multi-project_setupandroid/creating_a_library_project.html">
+            
+                
+                    <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/creating_a_library_project.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.1.</b>
+                        
+                         Creating a Library Project（创建一个库项目）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3.2" data-path="dependenciesandroid_libraries_and_multi-project_setupandroid/differences_between_a_project_and_a_library_project.html">
+            
+                
+                    <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/differences_between_a_project_and_a_library_project.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.2.</b>
+                        
+                         Differences between a Project and a Library Project（普通项目和库项目之间的区别）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="4.3.3" data-path="dependenciesandroid_libraries_and_multi-project_setupandroid/referencing_a_library.html">
+            
+                
+                    <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/referencing_a_library.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.3.</b>
+                        
+                         Referencing a Library（引用一个库项目）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3.4" data-path="dependenciesandroid_libraries_and_multi-project_setupandroid/library_publication.html">
+            
+                
+                    <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/library_publication.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.4.</b>
+                        
+                         Library Publication（库项目发布）
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="testing/README.html">
+            
+                
+                    <a href="../testing/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         Testing（测试）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1" data-path="testing/basics_and_configuration.html">
+            
+                
+                    <a href="../testing/basics_and_configuration.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         Basics and Configuration（基本知识和配置）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="testing/running_tests.html">
+            
+                
+                    <a href="../testing/running_tests.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                         Running tests（运行测试）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.3" data-path="testing/testing_android_librariesandroid.html">
+            
+                
+                    <a href="../testing/testing_android_librariesandroid.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                         Testing Android Libraries（测试Android库）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.4" data-path="testing/test_reports.html">
+            
+                
+                    <a href="../testing/test_reports.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                         Test reports（测试报告）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.4.1" data-path="testing/single_projects.html">
+            
+                
+                    <a href="../testing/single_projects.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.1.</b>
+                        
+                         Single projects（独立项目）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.4.2" data-path="testing/multi-projects_reports.html">
+            
+                
+                    <a href="../testing/multi-projects_reports.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.2.</b>
+                        
+                         Multi-projects reports（多项目报告）
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.5" data-path="testing/lint_supportlint.html">
+            
+                
+                    <a href="../testing/lint_supportlint.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                         Lint support（Lint支持)
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="build_variants/README.html">
+            
+                
+                    <a href="../build_variants/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         Build Variants（构建变种版本）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1" data-path="build_variants/product_flavors.html">
+            
+                
+                    <a href="../build_variants/product_flavors.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                         Product flavors（不同定制的产品）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.2" data-path="build_variants/build_type__+_product_flavor_=_build_variant+=.html">
+            
+                
+                    <a href="../build_variants/build_type__+_product_flavor_=_build_variant+=.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                         Build Type  + Product Flavor = Build Variant（构建类型+定制产品=构建变种版本）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.3" data-path="build_variants/product_flavor_configurationproduct_flavor.html">
+            
+                
+                    <a href="../build_variants/product_flavor_configurationproduct_flavor.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                         Product Flavor Configuration（Product Flavor的配置）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.4" data-path="build_variants/sourcesets_and_dependencies.html">
+            
+                
+                    <a href="../build_variants/sourcesets_and_dependencies.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                         Sourcesets and Dependencies（源组件和依赖关系）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.5" data-path="build_variants/building_and_tasks.html">
+            
+                
+                    <a href="../build_variants/building_and_tasks.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                         Building and Tasks（构建和任务）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.6" data-path="build_variants/testing.html">
+            
+                
+                    <a href="../build_variants/testing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                         Testing（测试）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.7" data-path="build_variants/multi-flavor_variants.html">
+            
+                
+                    <a href="../build_variants/multi-flavor_variants.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.7.</b>
+                        
+                         Multi-flavor variants
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="advanced_build_customization/README.html">
+            
+                
+                    <a href="../advanced_build_customization/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         Advanced Build Customization（高级构建定制）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1" data-path="advanced_build_customization/build_options">
+            
+                
+                    <a href="../advanced_build_customization/build_options">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                         Build options（构建选项）
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1.1" data-path="advanced_build_customization/java_compilation_optionsjava.html">
+            
+                
+                    <a href="../advanced_build_customization/java_compilation_optionsjava.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.1.</b>
+                        
+                         Java Compilation options（Java编译选项）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.2" data-path="advanced_build_customization/aapt_optionsaapt.html">
+            
+                
+                    <a href="../advanced_build_customization/aapt_optionsaapt.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.2.</b>
+                        
+                         aapt options（aapt选项）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.1.3" data-path="advanced_build_customization/article.html">
+            
+                
+                    <a href="../advanced_build_customization/article.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.3.</b>
+                        
+                         dex options（dex选项）
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2" data-path="advanced_build_customization/manipulation_taskstask.html">
+            
+                
+                    <a href="../advanced_build_customization/manipulation_taskstask.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                         Manipulation tasks（操作task）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3" data-path="advanced_build_customization/buildtype_and_product_flavor_property_referencebuildtypeproduct_flavor.html">
+            
+                
+                    <a href="../advanced_build_customization/buildtype_and_product_flavor_property_referencebuildtypeproduct_flavor.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                         BuildType and Product Flavor property reference（BuildType和Product Flavor属性参考）
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.4" data-path="advanced_build_customization/using_sourcecompatibility_17jdk17sourcecompatibility.html">
+            
+                
+                    <a href="../advanced_build_customization/using_sourcecompatibility_17jdk17sourcecompatibility.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                         Using sourceCompatibility 1.7（使用（JDK）1.7版本的sourceCompatibility）
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Generated using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="page-wrapper" tabindex="-1">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 50.98039215686274%;min-width: 49.01960784313726%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="译者序" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../introduction/README.html" title="Introduction（简介）" class="chapter done new-chapter" data-progress="1" style="left: 1.9607843137254901%;"></a>
+    
+        <a href="../introduction/goals_of_the_new_build_systemgradle.html" title="Goals of the new Build System（gradle构建系统的目标）" class="chapter done " data-progress="1.1" style="left: 3.9215686274509802%;"></a>
+    
+        <a href="../introduction/why_gradlegradle.html" title="Why Gradle？（为什么使用gradle）" class="chapter done " data-progress="1.2" style="left: 5.882352941176471%;"></a>
+    
+        <a href="../requirements/README.html" title="Requirements（要求）" class="chapter done new-chapter" data-progress="2" style="left: 7.8431372549019605%;"></a>
+    
+        <a href="../basic_project/README.html" title="Basic Project（基本项目）" class="chapter done new-chapter" data-progress="3" style="left: 9.803921568627452%;"></a>
+    
+        <a href="../basic_project/simple_build_files.html" title="Simple build files（简单的构建文件）" class="chapter done " data-progress="3.1" style="left: 11.764705882352942%;"></a>
+    
+        <a href="../basic_project/project_structure.html" title="Project Structure（项目结构）" class="chapter done " data-progress="3.2" style="left: 13.72549019607843%;"></a>
+    
+        <a href="../basic_project/configuring_the_structure.html" title="Configuring the Structure" class="chapter done " data-progress="3.2.1" style="left: 15.686274509803921%;"></a>
+    
+        <a href="../basic_project/build_tasks.html" title="Build Tasks（构建任务）" class="chapter done " data-progress="3.3" style="left: 17.647058823529413%;"></a>
+    
+        <a href="../basic_project/general_tasks.html" title="General Tasks（通用任务）" class="chapter done " data-progress="3.3.1" style="left: 19.607843137254903%;"></a>
+    
+        <a href="../basic_project/java_project_tasksjavatask.html" title="Java project tasks（Java项目的Task）" class="chapter done " data-progress="3.3.2" style="left: 21.568627450980394%;"></a>
+    
+        <a href="../basic_project/android_tasks.html" title="Android tasks" class="chapter done " data-progress="3.3.3" style="left: 23.529411764705884%;"></a>
+    
+        <a href="../basic_project/basic_build_customization.html" title="Basic Build Customization（基本的构建定制）" class="chapter done " data-progress="3.4" style="left: 25.49019607843137%;"></a>
+    
+        <a href="../basic_project/manifest_entries_manifest.html" title="Manifest entries （Manifest属性）" class="chapter done " data-progress="3.4.1" style="left: 27.45098039215686%;"></a>
+    
+        <a href="../basic_project/build_types.html" title="Build Types（构建类型）" class="chapter done " data-progress="3.4.2" style="left: 29.41176470588235%;"></a>
+    
+        <a href="../basic_project/signing_configurations.html" title="signing configurations（签名配置）" class="chapter done " data-progress="3.4.3" style="left: 31.372549019607842%;"></a>
+    
+        <a href="../basic_project/running_proguard_proguard.html" title="Running Proguard（运行 Proguard）" class="chapter done " data-progress="3.4.4" style="left: 33.333333333333336%;"></a>
+    
+        <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/README.html" title="Dependencies，Android Libraries and Multi-project setup（依赖关系，Android库和多项目设置）" class="chapter done new-chapter" data-progress="4" style="left: 35.294117647058826%;"></a>
+    
+        <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/dependencies_on_binary_packages.html" title="Dependencies on binary packages（依赖二进制包）" class="chapter done " data-progress="4.1" style="left: 37.254901960784316%;"></a>
+    
+        <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/local_packages.html" title="Local packages（本地包）" class="chapter done " data-progress="4.1.1" style="left: 39.21568627450981%;"></a>
+    
+        <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/remote_artifacts.html" title="Remote artifacts（远程文件）" class="chapter done " data-progress="4.1.2" style="left: 41.1764705882353%;"></a>
+    
+        <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/multi_project_setup.html" title="Multi project setup（多项目设置）" class="chapter done " data-progress="4.2" style="left: 43.13725490196079%;"></a>
+    
+        <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/library_projects.html" title="Library projects（库项目）" class="chapter done " data-progress="4.3" style="left: 45.09803921568628%;"></a>
+    
+        <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/creating_a_library_project.html" title="Creating a Library Project（创建一个库项目）" class="chapter done " data-progress="4.3.1" style="left: 47.05882352941177%;"></a>
+    
+        <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/differences_between_a_project_and_a_library_project.html" title="Differences between a Project and a Library Project（普通项目和库项目之间的区别）" class="chapter done " data-progress="4.3.2" style="left: 49.01960784313726%;"></a>
+    
+        <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/referencing_a_library.html" title="Referencing a Library（引用一个库项目）" class="chapter done " data-progress="4.3.3" style="left: 50.98039215686274%;"></a>
+    
+        <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/library_publication.html" title="Library Publication（库项目发布）" class="chapter  " data-progress="4.3.4" style="left: 52.94117647058823%;"></a>
+    
+        <a href="../testing/README.html" title="Testing（测试）" class="chapter  new-chapter" data-progress="5" style="left: 54.90196078431372%;"></a>
+    
+        <a href="../testing/basics_and_configuration.html" title="Basics and Configuration（基本知识和配置）" class="chapter  " data-progress="5.1" style="left: 56.86274509803921%;"></a>
+    
+        <a href="../testing/running_tests.html" title="Running tests（运行测试）" class="chapter  " data-progress="5.2" style="left: 58.8235294117647%;"></a>
+    
+        <a href="../testing/testing_android_librariesandroid.html" title="Testing Android Libraries（测试Android库）" class="chapter  " data-progress="5.3" style="left: 60.78431372549019%;"></a>
+    
+        <a href="../testing/test_reports.html" title="Test reports（测试报告）" class="chapter  " data-progress="5.4" style="left: 62.745098039215684%;"></a>
+    
+        <a href="../testing/single_projects.html" title="Single projects（独立项目）" class="chapter  " data-progress="5.4.1" style="left: 64.70588235294117%;"></a>
+    
+        <a href="../testing/multi-projects_reports.html" title="Multi-projects reports（多项目报告）" class="chapter  " data-progress="5.4.2" style="left: 66.66666666666667%;"></a>
+    
+        <a href="../testing/lint_supportlint.html" title="Lint support（Lint支持)" class="chapter  " data-progress="5.5" style="left: 68.62745098039215%;"></a>
+    
+        <a href="../build_variants/README.html" title="Build Variants（构建变种版本）" class="chapter  new-chapter" data-progress="6" style="left: 70.58823529411765%;"></a>
+    
+        <a href="../build_variants/product_flavors.html" title="Product flavors（不同定制的产品）" class="chapter  " data-progress="6.1" style="left: 72.54901960784314%;"></a>
+    
+        <a href="../build_variants/build_type__+_product_flavor_=_build_variant+=.html" title="Build Type  + Product Flavor = Build Variant（构建类型+定制产品=构建变种版本）" class="chapter  " data-progress="6.2" style="left: 74.50980392156863%;"></a>
+    
+        <a href="../build_variants/product_flavor_configurationproduct_flavor.html" title="Product Flavor Configuration（Product Flavor的配置）" class="chapter  " data-progress="6.3" style="left: 76.47058823529412%;"></a>
+    
+        <a href="../build_variants/sourcesets_and_dependencies.html" title="Sourcesets and Dependencies（源组件和依赖关系）" class="chapter  " data-progress="6.4" style="left: 78.43137254901961%;"></a>
+    
+        <a href="../build_variants/building_and_tasks.html" title="Building and Tasks（构建和任务）" class="chapter  " data-progress="6.5" style="left: 80.3921568627451%;"></a>
+    
+        <a href="../build_variants/testing.html" title="Testing（测试）" class="chapter  " data-progress="6.6" style="left: 82.3529411764706%;"></a>
+    
+        <a href="../build_variants/multi-flavor_variants.html" title="Multi-flavor variants" class="chapter  " data-progress="6.7" style="left: 84.31372549019608%;"></a>
+    
+        <a href="../advanced_build_customization/README.html" title="Advanced Build Customization（高级构建定制）" class="chapter  new-chapter" data-progress="7" style="left: 86.27450980392157%;"></a>
+    
+        <a href="../advanced_build_customization/build_options" title="Build options（构建选项）" class="chapter  " data-progress="7.1" style="left: 88.23529411764706%;"></a>
+    
+        <a href="../advanced_build_customization/java_compilation_optionsjava.html" title="Java Compilation options（Java编译选项）" class="chapter  " data-progress="7.1.1" style="left: 90.19607843137256%;"></a>
+    
+        <a href="../advanced_build_customization/aapt_optionsaapt.html" title="aapt options（aapt选项）" class="chapter  " data-progress="7.1.2" style="left: 92.15686274509804%;"></a>
+    
+        <a href="../advanced_build_customization/article.html" title="dex options（dex选项）" class="chapter  " data-progress="7.1.3" style="left: 94.11764705882354%;"></a>
+    
+        <a href="../advanced_build_customization/manipulation_taskstask.html" title="Manipulation tasks（操作task）" class="chapter  " data-progress="7.2" style="left: 96.07843137254902%;"></a>
+    
+        <a href="../advanced_build_customization/buildtype_and_product_flavor_property_referencebuildtypeproduct_flavor.html" title="BuildType and Product Flavor property reference（BuildType和Product Flavor属性参考）" class="chapter  " data-progress="7.3" style="left: 98.03921568627452%;"></a>
+    
+        <a href="../advanced_build_customization/using_sourcecompatibility_17jdk17sourcecompatibility.html" title="Using sourceCompatibility 1.7（使用（JDK）1.7版本的sourceCompatibility）" class="chapter  " data-progress="7.4" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_391">
+                    
+                        <h1 id="referencing-a-library">Referencing a Library（引用一个库项目）</h1>
+<p>引用一个库项目的方法与引用其它项目的方法一样：</p>
+<pre><code>dependencies {
+    compile project(&#39;:libraries:lib1&#39;)
+    compile project(&#39;:libraries:lib2&#39;)
+}
+</code></pre><hr>
+<blockquote>
+<p>注意：如果你要引用多个库，那么排序将非常重要。这类似于旧构建系统里面的project.properties文件中的依赖排序。</p>
+</blockquote>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/differences_between_a_project_and_a_library_project.html" class="navigation navigation-prev " aria-label="Previous page: Differences between a Project and a Library Project（普通项目和库项目之间的区别）"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../dependenciesandroid_libraries_and_multi-project_setupandroid/library_publication.html" class="navigation navigation-next " aria-label="Next page: Library Publication（库项目发布）"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
