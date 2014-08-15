@@ -1,4 +1,16 @@
 {
     "github": "avatarqing",
-    "githubHost": "https://github.com/"
+    "githubHost": "https://github.com/",
+    "plugins": [
+        "ga",
+        "disqus"
+    ],
+    "pluginsConfig": {
+        "ga": {
+            "token": "UA-52789423-7"
+        },
+        "disqus": {
+            "shortName": "AvatarQing"
+        }
+    }
 }

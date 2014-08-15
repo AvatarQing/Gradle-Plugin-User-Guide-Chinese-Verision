@@ -24,6 +24,6 @@
 
 ---
 
->注意：src/androidTest/AndroidManifest.xml是不需要的，它会自动被创建。
+> 注意：src/androidTest/AndroidManifest.xml是不需要的，它会自动被创建。
 
 ---
