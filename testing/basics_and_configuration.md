@@ -1,6 +1,6 @@
 # Basics and Configuration（基本知识和配置）
 
-正如前面所提到的，紧邻`main` _ourceSet_的就是`androidTest` _sourceSet_，默认路径在src/androidTest/下。
+正如前面所提到的，紧邻`main` _sourceSet_的就是`androidTest` _sourceSet_，默认路径在src/androidTest/下。
 在这个测试_sourceSet_中会构建一个使用Android测试框架，并且可以部署到设备上的测试apk来测试应用程序。这里面包含单元测试，集成测试，和后续UI自动化测试。
 这个测试sourceSet不应该包含AndroidManifest.xml文件，因为这个文件会自动生成。
 
