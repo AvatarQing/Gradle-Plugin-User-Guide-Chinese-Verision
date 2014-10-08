@@ -54,7 +54,7 @@ Android Plugin使用的是类似的语法。但是由于它使用的是自己的
 
 ---
 
-> 注意：`setRoot()`方法将移动整个组件（包括它的子文件夹）到一个新的文件夹。示例中将会移动`scr/androidTest/*`到`tests/*`下。
+> 注意：`setRoot()`方法将移动整个组件（包括它的子文件夹）到一个新的文件夹。示例中将会移动`src/androidTest/*`到`tests/*`下。
 以上这些是Android特有的，如果配置在Java的_sourceSets_里面将不会有作用。
 
 ---
