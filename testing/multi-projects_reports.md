@@ -13,8 +13,9 @@
             classpath 'com.android.tools.build:gradle:0.5.6'
         }
     }
+    
+    apply plugin: 'android-reporting'
 
-apply plugin: 'android-reporting'
 这必须添加到项目的根目录下，例如与settings.gradle文件同个目录的build.gradle文件中。
 
 之后，在命令行中导航到项目根目录下，输入以下命令就可以运行所有测试并合并所有报告：
