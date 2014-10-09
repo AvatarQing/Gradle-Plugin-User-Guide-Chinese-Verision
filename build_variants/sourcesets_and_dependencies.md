@@ -11,7 +11,7 @@
 * `android.sourceSets.androidTestFlavor1`
 位于src/androidTestFlavor1/
 * `android.sourceSets.androidTestFlavor2`
-位于src/androidTestFlavor2/`
+位于src/androidTestFlavor2/
 
 这些_sourceSet_用于与`android.sourceSets.main`和_Build Type_的_sourceSet_来构建APK。
 

@@ -27,7 +27,7 @@
 
 `defaultConfig`为所有的flavor提供基本的配置，每一个flavor都可以重设这些配置的值。在上面的例子中，最终的配置结果将会是：
 
-    * `flavor1
+    * `flavor1`
         * `packageName`: com.example.flavor1
         * `minSdkVersion`: 8
         * `versionCode`: 20
