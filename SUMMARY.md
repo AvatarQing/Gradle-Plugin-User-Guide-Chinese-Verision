@@ -45,7 +45,7 @@
    * [Testing（测试）](build_variants/testing.md)
    * [Multi-flavor variants](build_variants/multi-flavor_variants.md)
 * [Advanced Build Customization（高级构建定制）](advanced_build_customization/README.md)
-   * [Build options（构建选项）](advanced_build_customization/build_options)
+   * [Build options（构建选项）](advanced_build_customization/build_options.md)
        * [Java Compilation options（Java编译选项）](advanced_build_customization/java_compilation_optionsjava.md)
        * [aapt options（aapt选项）](advanced_build_customization/aapt_optionsaapt.md)
        * [dex options（dex选项）](advanced_build_customization/article.md)
