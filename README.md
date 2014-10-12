@@ -7,7 +7,8 @@ http://tools.android.com/tech-docs/new-build-system/user-guide
 中文版在线阅读地址  
 http://avatarqing.github.io/Gradle-Plugin-User-Guide-Chinese-Verision
 
----
+GitHub地址  
+https://github.com/AvatarQing/Gradle-Plugin-User-Guide-Chinese-Verision
 
 本指南的翻译内容均出自于CSDN的__琴弦第七__，本人只是对其做出微小修正，对照了英文原文归纳整理成markdown格式的文本并生成gitbook，方便大家阅读学习。[翻译原文地址点此打开](http://blog.csdn.net/qinxiandiqi/article/category/2394347)。
 
