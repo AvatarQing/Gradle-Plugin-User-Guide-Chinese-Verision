@@ -4,8 +4,8 @@ Gradle Android插件用户指南翻译
 Gradle Plugin User Guide 官方原文地址  
 http://tools.android.com/tech-docs/new-build-system/user-guide
 
-中文版在线阅读地址
-http://avatarqing.github.io/Gradle-Plugin-User-Guide-Chinese-Verision/
+中文版在线阅读地址  
+http://avatarqing.github.io/Gradle-Plugin-User-Guide-Chinese-Verision
 
 ---
 
