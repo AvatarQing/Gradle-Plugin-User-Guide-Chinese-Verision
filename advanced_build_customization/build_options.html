@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Building and Tasks（构建和任务） | Gradle Android插件用户指南翻译</title>
+        <title>Build options（构建选项） | Gradle Android插件用户指南翻译</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -20,10 +20,10 @@
     <meta name="author" content="avatarqing">
     
     
-    <link rel="next" href="../build_variants/testing.html" />
+    <link rel="next" href="../advanced_build_customization/java_compilation_optionsjava.html" />
     
     
-    <link rel="prev" href="../build_variants/sourcesets_and_dependencies.html" />
+    <link rel="prev" href="../advanced_build_customization/README.html" />
     
 
         
@@ -35,7 +35,7 @@
 
 
         
-    <div class="book" data-github="avatarqing" data-level="6.5" data-basepath=".." data-revision="1413119203603">
+    <div class="book" data-github="avatarqing" data-level="7.1" data-basepath=".." data-revision="1413119203603">
     
 
 <div class="book-summary">
@@ -768,7 +768,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="6.5" data-path="build_variants/building_and_tasks.html">
+        <li class="chapter " data-level="6.5" data-path="build_variants/building_and_tasks.html">
             
                 
                     <a href="../build_variants/building_and_tasks.html">
@@ -838,7 +838,7 @@
                 
     
         
-        <li class="chapter " data-level="7.1" data-path="advanced_build_customization/build_options.html">
+        <li class="chapter active" data-level="7.1" data-path="advanced_build_customization/build_options.html">
             
                 
                     <a href="../advanced_build_customization/build_options.html">
@@ -1049,20 +1049,9 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_46">
+                    <section class="normal" id="section-gitbook_8">
                     
-                        <h1 id="building-and-tasks">Building and Tasks（构建和任务）</h1>
-<p>我们前面提到每一个<em>Build Type</em>会创建自己的assemble&lt; name &gt;task，但是<em>Build Variant</em>是<em>Build Type</em>和<em>Product Flavor</em>的组合。</p>
-<p>当使用<em>Product Flavor</em>的时候，将会创建更多的assemble-type task。分别是：</p>
-<ol>
-<li>assemble&lt; Variant Name &gt;
-允许直接构建一个Variant版本，例如<code>assembleFlavor1Debug</code>。</li>
-<li>assemble&lt; Build Type Name &gt;
-允许构建指定Build Type的所有APK，例如<code>assembleDebug</code>将会构建Flavor1Debug和Flavor2Debug两个Variant版本。</li>
-<li>assemble&lt; Product Flavor Name &gt;
-允许构建指定flavor的所有APK，例如<code>assembleFlavor1</code>将会构建Flavor1Debug和Flavor1Release两个Variant版本。</li>
-</ol>
-<p>另外<code>assemble</code> task会构建所有可能组合的Variant版本。</p>
+                        <h1 id="build-options">Build options（构建选项）</h1>
 
                     
                     </section>
@@ -1073,10 +1062,10 @@
         </div>
 
         
-        <a href="../build_variants/sourcesets_and_dependencies.html" class="navigation navigation-prev " aria-label="Previous page: Sourcesets and Dependencies（源组件和依赖关系）"><i class="fa fa-angle-left"></i></a>
+        <a href="../advanced_build_customization/README.html" class="navigation navigation-prev " aria-label="Previous page: Advanced Build Customization（高级构建定制）"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../build_variants/testing.html" class="navigation navigation-next " aria-label="Next page: Testing（测试）"><i class="fa fa-angle-right"></i></a>
+        <a href="../advanced_build_customization/java_compilation_optionsjava.html" class="navigation navigation-next " aria-label="Next page: Java Compilation options（Java编译选项）"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
