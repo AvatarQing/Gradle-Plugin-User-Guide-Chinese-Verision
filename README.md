@@ -25,3 +25,7 @@ Android Studio使用Gradle构建工具，Eclipse的ADT插件使用的是Ant构�
 License
 
 采用[知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议](http://creativecommons.org/licenses/by-nc-sa/4.0/)进行许可。
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/AvatarQing/gradle-plugin-user-guide-chinese-verision/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
