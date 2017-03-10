@@ -1,6 +1,6 @@
 # Manifest entries （Manifest属性）
 
-通过SDL可以配置一下manifest选项：
+通过DSL可以配置一下manifest选项：
 
 * minSdkVersion
 * targetSdkVersion
